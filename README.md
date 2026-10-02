@@ -95,4 +95,10 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 ## License
 
-To be defined.
+## Documentation
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Model](docs/MODEL.md)
+- [Training](docs/TRAINING.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Changelog](CHANGELOG.md)
