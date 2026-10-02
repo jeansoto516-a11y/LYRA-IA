@@ -11,5 +11,6 @@ All notable changes to this project are documented here.
 - Training system: external JSON configuration, AdamW, warmup and cosine schedule, gradient accumulation, gradient clipping, validation, early stopping, atomic checkpoints and resumable training.
 - Inference engine that loads a checkpoint and a tokenizer and generates text, independent of the training code.
 - Scripts for cleaning text, training the tokenizer, preparing data, training and sampling.
-- Automated test suite (55 tests).
+- Conversation layer: message structures, a context manager that fits history into the model's token budget, a persona loaded from JSON, a chat session and a terminal chat script.
+- Automated test suite (74 tests).
 - Baseline result: validation loss 4.30 (perplexity about 74) on a single public-domain novel.

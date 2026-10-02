@@ -13,8 +13,9 @@ Lyra is organized as independent layers. The neural model contains no business l
 | Dataset pipeline | `training/dataset.py`, `scripts/` | Cleaning, deduplication, tokenization, splits, batching | Implemented |
 | Training system | `training/` | Config, optimizer, schedule, evaluation, checkpoints, resume | Implemented |
 | Evaluation | `tests/`, `docs/` | Loss and perplexity today; benchmark suite planned | Partial |
-| Context manager | planned | Structured messages: system, history, tool results, memory | Planned |
-| Personality | planned | Configurable behavior without changing weights | Planned |
+| Context manager | `core/context/` | Structured messages and a token budget; drops the oldest turns to fit the model context | Implemented (system and history only) |
+| Personality | `personality/` | Persona loaded from JSON and rendered as system text, no weight changes | Implemented |
+| Conversation session | `conversation/` | Ties persona, context manager and inference engine into a chat | Implemented |
 | Tool system | planned | Registry, schemas, permissions, execution | Planned |
 | Web research | planned | Search as a tool; external content treated as untrusted | Planned |
 | Memory | planned | Session, persistent, contextual and operational memory | Planned |
@@ -53,6 +54,8 @@ Training system -> Dataset pipeline, Neural model, Tokenizer
 | Checkpoints store optimizer, sampler state, config and dataset metadata | Training can be paused and resumed exactly |
 | Inference separated from training | Deployment should not need training code |
 | Model learning separated from user memory | Conversations never change model weights automatically |
+| Plain-text dialogue format (`Usuário: ...` / `Lyra: ...`) | Keeps the already trained checkpoint compatible; dedicated role tokens come with a retrained tokenizer |
+| Whitespace collapsed in every message before it enters the prompt | A user cannot start a new line to forge a fake turn of the assistant |
 
 ## Security principles (design intent for later phases)
 
@@ -61,4 +64,4 @@ Training system -> Dataset pipeline, Neural model, Tokenizer
 - The model never receives unrestricted database access; writes need validated parameters and, when sensitive, human confirmation.
 - Secrets are never logged.
 
-None of these layers beyond the neural core, training and inference exist yet.
+Layers marked Planned in the table above do not exist yet. The conversation layer works, but the base model was never trained on dialogue, so its replies continue the training text rather than answer the user.

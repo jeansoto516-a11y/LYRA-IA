@@ -11,7 +11,7 @@ Early development (Lyra 0.1). The project is built in incremental phases, and ea
 | 1 | Byte-level BPE tokenizer | Complete |
 | 2 | Neural core and text generation | Complete |
 | 3 | Dataset and training pipeline | Complete |
-| 4 | Conversation and context management | Planned |
+| 4 | Conversation and context management | Complete (base model not yet      trained for dialogue) |
 | 5 | Tool system | Planned |
 | 6 | Web research | Planned |
 | 7 | Memory | Planned |
@@ -58,11 +58,14 @@ lyra/
 │   ├── tokenizer/    BPE tokenizer
 │   ├── model/        Transformer components and model
 │   ├── generation/   Sampling controls (temperature, top-k, top-p)
-│   └── inference/    Checkpoint loading and text generation
+│   ├── inference/    Checkpoint loading and text generation
+│   └── context/      Message structures and context budget manager
+├── personality/      Configurable persona (no weight changes)
+├── conversation/     Chat session tying persona, context and model together
 ├── training/         Data pipeline, trainer and checkpoints
 ├── tests/            Automated tests
-├── scripts/          Data preparation, training and sampling scripts
-├── configs/          Training configuration
+├── scripts/          Data preparation, training, sampling and chat scripts
+├── configs/          Training and persona configuration
 ├── docs/
 └── data/             Local only, not versioned
 ```
