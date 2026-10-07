@@ -1,0 +1,22 @@
+{
+    "completion_prompts": [
+    "Uma noite destas",
+    "Capitu",
+    "Bentinho",
+    "Era uma vez",
+    "Naquele tempo",
+    "A casa da rua",
+    "Minha mãe disse",
+    "José Dias",
+    "No dia seguinte",
+    "Escobar"
+    ],
+    "chat_script": [
+    "olá, tudo bem?",
+    "qual é o seu nome?",
+    "você sabe me ajudar?",
+    "conte alguma coisa",
+    "o que você acha disso?",
+    "obrigado"
+    ]
+}

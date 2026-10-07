@@ -42,7 +42,7 @@ Trained on a single public-domain novel (about 120k training tokens) on a laptop
 
 | Metric | Value |
 |--------|-------|
-| Parameters | 995,968 |
+| Parameters | 995,968 | 
 | Vocabulary | 1,500 tokens (byte-level BPE) |
 | Training time | About 40 minutes (CPU) |
 | Best validation loss | 4.30 (perplexity about 74; random guessing is 1,500) |

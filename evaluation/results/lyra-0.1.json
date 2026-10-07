@@ -1,0 +1,40 @@
+{
+  "name": "lyra-0.1",
+  "checkpoint_step": 1500,
+  "parameters": 995968,
+  "vocab_size": 1500,
+  "context_length": 128,
+  "settings": {
+    "seed": 1234,
+    "max_new_tokens": 60,
+    "temperature": 0.8,
+    "top_k": 40,
+    "top_p": 0.95
+  },
+  "val": {
+    "tokens": 6656,
+    "loss": 4.317406617678129,
+    "perplexity": 74.9938880596887,
+    "bits_per_byte": 2.147427464704758
+  },
+  "test": {
+    "tokens": 6656,
+    "loss": 5.0191545853248005,
+    "perplexity": 151.283352549385,
+    "bits_per_byte": 2.3666498582914044
+  },
+  "generation": {
+    "num_prompts": 10,
+    "distinct_1": 0.4827586206896552,
+    "distinct_2": 0.8816568047337278,
+    "invented_word_rate": 0.10919540229885058,
+    "copy_rate_6": 0.0,
+    "replacement_char_rate": 0.0
+  },
+  "chat": {
+    "turns": 6,
+    "turn_marker_leaks": 0,
+    "empty_reply_rate": 0.0,
+    "prompt_within_budget": true
+  }
+}
