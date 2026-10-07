@@ -105,3 +105,4 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 - [Training](docs/TRAINING.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Changelog](CHANGELOG.md)
+- [Evaluation](docs/EVALUATION.md)

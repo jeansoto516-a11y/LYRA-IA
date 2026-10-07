@@ -12,7 +12,7 @@ Lyra is organized as independent layers. The neural model contains no business l
 | Inference engine | `core/inference/` | Load checkpoint and tokenizer, generate text | Implemented |
 | Dataset pipeline | `training/dataset.py`, `scripts/` | Cleaning, deduplication, tokenization, splits, batching | Implemented |
 | Training system | `training/` | Config, optimizer, schedule, evaluation, checkpoints, resume | Implemented |
-| Evaluation | `tests/`, `docs/` | Loss and perplexity today; benchmark suite planned | Partial |
+| Evaluation | `evaluation/`, `scripts/evaluate.py` | Language-model metrics, generated-text checks, chat checks and comparison between versions | Implemented (minimal; larger benchmarks planned) |
 | Context manager | `core/context/` | Structured messages and a token budget; drops the oldest turns to fit the model context | Implemented (system and history only) |
 | Personality | `personality/` | Persona loaded from JSON and rendered as system text, no weight changes | Implemented |
 | Conversation session | `conversation/` | Ties persona, context manager and inference engine into a chat | Implemented |

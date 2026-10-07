@@ -1,6 +1,6 @@
 # Roadmap
 
-## Lyra 0.1: own core, trained baseline
+## Lyra 0.1: own core, trained baseline (complete)
 
 - [x] Byte-level BPE tokenizer with tests
 - [x] Causal Transformer, generation with sampling controls
@@ -8,7 +8,7 @@
 - [x] Inference engine
 - [x] Baseline result: validation loss 4.30 (perplexity about 74) on one novel
 - [x] Conversation basics: message and context structures, history, persona
-- [ ] Minimal evaluation set so versions can be compared
+- [x] Minimal evaluation set so versions can be compared
 
 ## Lyra 0.2: more data, tools and web
 

@@ -100,7 +100,7 @@ def test_avaliacao_e_deterministica(tok):
     torch.manual_seed(0)
     model = LyraModel(
         LyraConfig(vocab_size=tok.vocab_size, context_length=32, d_model=32,
-                   n_layers=2, n_heads=4, d_ff=64, dropout=0.1)
+                n_layers=2, n_heads=4, d_ff=64, dropout=0.1)
     )
     model.train()  # mesmo em modo treino, a avaliação usa eval() por dentro
     ids = torch.tensor(tok.encode(CORPUS)[:800])
