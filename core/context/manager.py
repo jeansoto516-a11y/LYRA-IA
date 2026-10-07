@@ -26,6 +26,7 @@ class ContextManager:
         system_text: str,
         user_label: str = "Usuário",
         assistant_label: str = "Lyra",
+        tool_label: str = "Ferramenta",
     ) -> None:
         self.tokenizer = tokenizer
         self.reserve_tokens = reserve_tokens
@@ -35,6 +36,7 @@ class ContextManager:
         self.system_text = " ".join(system_text.split())
         self.user_label = user_label
         self.assistant_label = assistant_label
+        self.tool_label = tool_label
 
         system_len = len(tokenizer.encode(self.system_text))
         if system_len > self.budget * 3 // 5:
@@ -50,7 +52,11 @@ class ContextManager:
         return " ".join(text.split())
 
     def _label(self, role: str) -> str:
-        return self.user_label if role == "user" else self.assistant_label
+        if role == "user":
+            return self.user_label
+        if role == "tool":
+            return self.tool_label
+        return self.assistant_label
 
     def render(self, messages: list[Message]) -> str:
         lines = [f"{self._label(m.role)}: {self._clean(m.content)}" for m in messages]

@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 
-ROLES = ("user", "assistant")
+ROLES = ("user", "assistant", "tool")
 
 
 @dataclass(frozen=True)
 class Message:
-    """Uma mensagem da conversa (do usuário ou da Lyra)."""
+    """Uma mensagem da conversa (usuário, Lyra ou resultado de ferramenta)."""
 
     role: str
     content: str
