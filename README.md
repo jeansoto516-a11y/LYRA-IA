@@ -12,7 +12,7 @@ Early development (Lyra 0.1). The project is built in incremental phases, and ea
 | 2 | Neural core and text generation | Complete |
 | 3 | Dataset and training pipeline | Complete |
 | 4 | Conversation and context management | Complete (base model not yet      trained for dialogue) |
-| 5 | Tool system | Planned |
+| 5 | Tool system | Complete (safe core and built-in tools; model not yet trained to call tools) |
 | 6 | Web research | Planned |
 | 7 | Memory | Planned |
 | 8 | Integration API | Planned |
@@ -62,10 +62,12 @@ lyra/
 │   └── context/      Message structures and context budget manager
 ├── personality/      Configurable persona (no weight changes)
 ├── conversation/     Chat session tying persona, context and model together
+├── tools/            Registry, validation, permissions, executor, audit log, built-in tools
+├── evaluation/       Metrics, runner and stored results per version
 ├── training/         Data pipeline, trainer and checkpoints
 ├── tests/            Automated tests
-├── scripts/          Data preparation, training, sampling and chat scripts
-├── configs/          Training and persona configuration
+├── scripts/          Data preparation, training, sampling, chat, evaluation and tools demo
+├── configs/          Training, persona and evaluation configuration
 ├── docs/
 └── data/             Local only, not versioned
 ```

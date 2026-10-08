@@ -14,7 +14,9 @@
 
 - Larger Portuguese corpus with verified licenses; retrain the tokenizer on it
 - Larger model configuration (tied to available hardware)
-- Tool system: registry, schemas, permissions, execution and logging
+- [x] Tool system core: registry, schemas, permissions, executor, confirmation, audit log and safe built-in tools
+- [ ] Teach the model to emit valid tool calls (needs a larger model and dialogue/tool training data)
+- [ ] Database tool with parameterized queries and write confirmation
 - Web search as a tool with source tracking and untrusted-content handling
 
 ## Lyra 0.3: memory and integration

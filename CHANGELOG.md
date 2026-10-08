@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here.
 
+## Unreleased
+
+### Added
+- Tool system: registry, typed schemas with strict validation, least-privilege permissions, executor with timeout, output limit and human confirmation for sensitive tools, structured audit log with secret redaction.
+- Tool-call protocol (`<tool_call>` JSON) with escaping of tool results to prevent injection, and an agent loop with a step limit.
+- Built-in tools: `calculate` (no `eval`), `get_current_time` and `read_text_file` (restricted to one authorized folder).
+- `tool` message role in the conversation context.
+- Demo script `scripts/tools_demo.py` (simulated model).
+- Documentation: `docs/TOOLS.md` and `docs/SECURITY.md`.
+- Automated tests: 191 in total.
+
 ## 0.1.0
 
 ### Added

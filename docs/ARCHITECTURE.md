@@ -16,10 +16,10 @@ Lyra is organized as independent layers. The neural model contains no business l
 | Context manager | `core/context/` | Structured messages and a token budget; drops the oldest turns to fit the model context | Implemented (system and history only) |
 | Personality | `personality/` | Persona loaded from JSON and rendered as system text, no weight changes | Implemented |
 | Conversation session | `conversation/` | Ties persona, context manager and inference engine into a chat | Implemented |
-| Tool system | planned | Registry, schemas, permissions, execution | Planned |
+| Tool system | `tools/` | Registry, schemas, validation, permissions, executor with timeout and confirmation, audit log, built-in tools | Implemented (model not yet trained to call tools) |
 | Web research | planned | Search as a tool; external content treated as untrusted | Planned |
 | Memory | planned | Session, persistent, contextual and operational memory | Planned |
-| Security layer | planned | Least privilege, confirmations, audit | Planned |
+| Security layer | `tools/permissions.py`, `tools/executor.py`, `docs/SECURITY.md` | Least privilege, confirmation of sensitive actions, redacted audit, untrusted tool output | Partial |
 | Integration API / SDK | planned | Versioned API (`/api/v1`), adapters for external systems | Planned |
 | Interface and avatar | planned | Chat UI; avatar as a state-driven view with no intelligence | Planned |
 
@@ -57,7 +57,7 @@ Training system -> Dataset pipeline, Neural model, Tokenizer
 | Plain-text dialogue format (`Usuário: ...` / `Lyra: ...`) | Keeps the already trained checkpoint compatible; dedicated role tokens come with a retrained tokenizer |
 | Whitespace collapsed in every message before it enters the prompt | A user cannot start a new line to forge a fake turn of the assistant |
 
-## Security principles (design intent for later phases)
+## Security principles (see SECURITY.md for what is implemented)
 
 - External content (web pages, tool output) is data, never instructions.
 - Tools declare what they access and do; each call is checked against permissions.
